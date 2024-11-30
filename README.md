@@ -20,10 +20,10 @@
 
 1. Клонируйте репозиторий:
 
-    ```bash
-        git clone git@github.com:monemonic/console_application_task_manager.git
-        cd console_application_task_manager
-    ```
+```bash
+    git clone git@github.com:monemonic/console_application_task_manager.git
+    cd console_application_task_manager
+```
 
 2. Установите зависимости:
 
