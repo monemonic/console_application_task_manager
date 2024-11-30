@@ -23,14 +23,12 @@ def test_add_task_success(runner, ctx, task_fixture, task_data):
 
     # Проверяем, что все поля имеют ожидаемые значения.
     added_task = tasks[-1]
-    test_fields = ('title', 'description', 'category', 'due_date', 'priority')
+    test_fields = ("title", "description", "category", "due_date", "priority")
     for field in test_fields:
         assert added_task[field] == task_data[field]
 
 
-@pytest.mark.parametrize(
-        'data', invalid_data
-    )
+@pytest.mark.parametrize("data", invalid_data)
 def test_add_task_not_valid_fields(runner, ctx, data):
     """Тест добавления задачи с не валидными данными."""
     # Создаем новую задачу с невалидными данными
@@ -47,8 +45,8 @@ def test_add_task_not_valid_fields(runner, ctx, data):
 
 
 def test_view_tasks(
-        runner, ctx, task_list,
-        task_output_all_data, task_output_id_one
+    runner, ctx, task_list,
+    task_output_all_data, task_output_id_one
 ):
     """Тест правильного вывода списка задач."""
     # Проверка вывода всех добавленных задач
@@ -90,7 +88,7 @@ def test_delete_task_by_id(runner, ctx, task_list, task_output_id_one):
 
 
 def test_delete_task_by_category(
-        runner, ctx, task_list, task_output_id_one
+    runner, ctx, task_list, task_output_id_one
 ):
     """Тест правильности удаления задач с указанием категории."""
     # Находим изначальное количество добавленных задач.
@@ -110,9 +108,7 @@ def test_delete_task_by_category(
     assert task_output_id_one.strip() == result.output.strip()
 
 
-@pytest.mark.parametrize(
-        'data', invalid_data
-    )
+@pytest.mark.parametrize("data", invalid_data)
 def test_edit_task_not_valid_data(
     runner, ctx, task_one, data, task_output_id_one
 ):
@@ -131,8 +127,8 @@ def test_edit_task_not_valid_data(
 
 
 def test_edit_task_valid_data(
-      runner, ctx,  task_one,
-      task_another_fixture, task_output_id_one_after_edit
+    runner, ctx, task_one,
+    task_another_fixture, task_output_id_one_after_edit
 ):
     "Проверка изменения задачи валидными данными."
     # Получением изначальные данные задачи
@@ -161,7 +157,7 @@ def test_edit_task_valid_data(
 
 
 def test_search_task(
-        runner, ctx, task_list, task_output_id_one, task_output_id_two
+    runner, ctx, task_list, task_output_id_one, task_output_id_two
 ):
     """Проверка поиска задач по ключевым словам."""
     # Выполняем поиск всех задач указанной категории
@@ -190,13 +186,13 @@ def test_search_task(
 
     # Проверяем, что запрос вернул ошибку с указанными значением
     assert (
-        'Error: Задачи с указанной категорией не найдены.'
+        "Error: Задачи с указанной категорией не найдены."
         == result.output.strip()
-        )
+    )
 
 
 def test_update_status_task(
-        runner, ctx, task_one, task_output_id_one_after_update_status
+    runner, ctx, task_one, task_output_id_one_after_update_status
 ):
     """Проверка команды на изменение статуса задачи."""
     params = ["--id", "1"]

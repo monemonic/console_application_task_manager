@@ -96,12 +96,12 @@ class TaskManager(ABC):
 
     @abstractmethod
     def add_task(
-            self,
-            title: str,
-            description: str,
-            category: str,
-            due_date: date,
-            priority: str
+        self,
+        title: str,
+        description: str,
+        category: str,
+        due_date: date,
+        priority: str
     ) -> None:
         """Создает задачу с указанными аргументами
 
@@ -199,14 +199,14 @@ class FileTaskStorage(TaskStorage):
 class FileTask(Task):
 
     def __init__(
-            self,
-            id: int,
-            title: str,
-            description: str,
-            category: str,
-            due_date: str,
-            priority: str,
-            status: str = DEFAULT_STATUS_TASK
+        self,
+        id: int,
+        title: str,
+        description: str,
+        category: str,
+        due_date: str,
+        priority: str,
+        status: str = DEFAULT_STATUS_TASK
     ):
         super().__init__(
             id, title, description, due_date, category, priority, status
@@ -254,9 +254,9 @@ class FileTaskManager(TaskManager):
         TaskManager (_type_): класс, от которого унаследован текущий класс
     """
     def __init__(
-            self,
-            storage: FileTaskStorage,
-            task: type[FileTask]
+        self,
+        storage: FileTaskStorage,
+        task: type[FileTask]
     ):
         """Создает объект для работы с задачами.
 
@@ -289,7 +289,7 @@ class FileTaskManager(TaskManager):
             if category is None
             else (
                 [self.task(**task) for task in tasks
-                 if task['category'] == category]
+                 if task["category"] == category]
             )
         )
 
@@ -302,12 +302,12 @@ class FileTaskManager(TaskManager):
         return None
 
     def add_task(
-            self,
-            title: str,
-            description: str,
-            category: str,
-            due_date: date,
-            priority: str
+        self,
+        title: str,
+        description: str,
+        category: str,
+        due_date: date,
+        priority: str
     ) -> None:
         """Создает задачу с указанными аргументами
 

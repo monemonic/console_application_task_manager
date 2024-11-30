@@ -9,23 +9,23 @@ from commands import cli
 @pytest.fixture
 def task_fixture():
     return [
-            "--title", "Моя задача",
-            "--description", "Задача Тест",
-            "--category", "Работа",
-            '--due_date', '2025-12-12',
-            "--priority", 'низкий'
-        ]
+        "--title", "Моя задача",
+        "--description", "Задача Тест",
+        "--category", "Работа",
+        "--due_date", "2025-12-12",
+        "--priority", "низкий"
+    ]
 
 
 @pytest.fixture
 def task_another_fixture():
     return [
-            "--title", "Моя задача 2",
-            "--description", "Задача Тест 2",
-            "--category", "Домашние",
-            '--due_date', '2029-12-12',
-            "--priority", 'высокий'
-        ]
+        "--title", "Моя задача 2",
+        "--description", "Задача Тест 2",
+        "--category", "Домашние",
+        "--due_date", "2029-12-12",
+        "--priority", "высокий"
+    ]
 
 
 @pytest.fixture
@@ -103,12 +103,12 @@ def task_output_id_two():
 @pytest.fixture
 def task_data():
     return {
-            "title": "Моя задача",
-            "description": "Задача Тест",
-            "category": "Работа",
-            'due_date': '2025-12-12',
-            "priority": 'низкий'
-        }
+        "title": "Моя задача",
+        "description": "Задача Тест",
+        "category": "Работа",
+        "due_date": "2025-12-12",
+        "priority": "низкий"
+    }
 
 
 @pytest.fixture
