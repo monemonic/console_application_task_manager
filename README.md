@@ -27,31 +27,31 @@
 
 2. Установите зависимости:
 
-    ```bash
-        pip install -r requirements.txt
-    ```
+```bash
+    pip install -r requirements.txt
+```
 
 ## Использование
 
 ### Просмотр задач
 #### Просмотр всех задач:
-    ```bash
-        python commands.py view-tasks
+```bash
+    python commands.py view-tasks
 
-    ```
+```
 
 #### Просмотр всех задач определенной категории:
-    ```bash
-        python commands.py view-tasks --category <категория>
-    ```
+```bash
+    python commands.py view-tasks --category <категория>
+```
 
 ### Добавление задач
 
     Для добавления новой задачи используется команда:
 
-    ```bash
-        python commands.py add-task
-    ```
+```bash
+    python commands.py add-task
+```
 
     Программа запросит следующие данные:
 
@@ -67,9 +67,9 @@
 
     Редактирование существующей задачи:
 
-    ```bash
-        python commands.py edit-task --id <ID> [опции]
-    ```
+```bash
+    python commands.py edit-task --id <ID> [опции]
+```
 
     Вы можете указать следующие опции:
 
@@ -84,31 +84,31 @@
 
 #### Удаление задач по ID:
 
-    ```bash
-        python commands.py delete-task --id <ID>
-    ```
+```bash
+    python commands.py delete-task --id <ID>
+```
 
 #### Удаление задач по категории:
 
-    ```bash
-        python commands.py delete-task --category <категория>
-    ```
+```bash
+    python commands.py delete-task --category <категория>
+```
 
 ### Поиск задач
 
 #### Поиск задач по статусу:
 
-    ```bash
-        python commands.py search-task --status <статус>
-    ```
+```bash
+    python commands.py search-task --status <статус>
+```
 
     Для поиска требуется указать полное название статуса
 
 #### Поиск задач по категории:
 
-    ```bash
-        python commands.py search-task --category <категория>
-    ```
+```bash
+    python commands.py search-task --category <категория>
+```
 
     Будут показаны все задачи в которых присутствует указанная категория
 
@@ -116,9 +116,9 @@
 
     Обновление статуса задачи на "Выполнена":
 
-    ```bash
-        python commands.py update-status-task --id <ID>
-    ```
+```bash
+    python commands.py update-status-task --id <ID>
+```
 
 ## Требования
 
